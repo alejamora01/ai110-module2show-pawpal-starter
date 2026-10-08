@@ -94,3 +94,17 @@ The Generate Schedule button calls Scheduler.generate_plan().
 
 I verified the integration through browser interactions
 and checked that the existing backend tests still pass.
+
+## Phase 3: Streamlit Integration
+
+I used AI to help connect the Streamlit UI to my Python classes.
+
+I implemented st.session_state to preserve the Owner object across Streamlit reruns.
+
+The Add Pet form calls Owner.add_pet(), and the Add Task form calls Pet.add_task().
+
+I tested the app in the browser by adding two pets, Ares and Milo, and assigning tasks to both.
+
+The Scheduler successfully generated a daily plan showing both pets, their tasks, and 80 remaining minutes.
+
+I verified that the interface uses my backend classes instead of placeholder data.
