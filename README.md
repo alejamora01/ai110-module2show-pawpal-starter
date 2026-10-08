@@ -83,29 +83,43 @@ Recurrence verified: True
 
 ## 🧪 Testing PawPal+
 
-Run `python -m pytest -v`.
+Run the automated tests with:
+
+```bash
+python -m pytest
+```
+
+### What I Tested
+
+- Task completion and task addition
+- Scheduling tasks from multiple pets
+- Priority and chronological sorting
+- Filtering by pet and completion status
+- Daily and weekly recurring tasks
+- Overlapping and adjacent time slots
+- Empty task lists and future tasks
+- Time constraints and duplicate prevention
+
+### Actual Test Results
 
 ```text
 ============================= test session starts ==============================
-platform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Users/alejamora/Desktop/ai110-module2show-pawpal-starter/.venv/bin/python
-cachedir: .pytest_cache
+platform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0
 rootdir: /Users/alejamora/Desktop/ai110-module2show-pawpal-starter
-collecting ... collected 11 items
+collected 17 items
 
-tests/test_pawpal.py::test_task_completion PASSED                        [  9%]
-tests/test_pawpal.py::test_task_addition PASSED                          [ 18%]
-tests/test_pawpal.py::test_multi_pet_schedule PASSED                     [ 27%]
-tests/test_pawpal.py::test_priority_sorting PASSED                       [ 36%]
-tests/test_pawpal.py::test_time_constraint PASSED                        [ 45%]
-tests/test_pawpal.py::test_completed_tasks_excluded PASSED               [ 54%]
-tests/test_scheduling.py::test_sort_by_time PASSED                       [ 63%]
-tests/test_scheduling.py::test_filter_by_pet_and_status PASSED           [ 72%]
-tests/test_scheduling.py::test_daily_recurrence PASSED                   [ 81%]
-tests/test_scheduling.py::test_weekly_recurrence PASSED                  [ 90%]
-tests/test_scheduling.py::test_overlapping_tasks PASSED                  [100%]
+tests/test_edge_cases.py ......                                          [ 35%]
+tests/test_pawpal.py ......                                              [ 70%]
+tests/test_scheduling.py .....                                           [100%]
 
-============================== 11 passed in 0.75s ==============================
+============================== 17 passed in 0.10s ==============================
 ```
+
+### Confidence Level
+
+**4/5 stars**
+
+I feel confident about the core scheduling behavior because the automated tests cover normal scenarios and important edge cases. However, the scheduler does not automatically resolve time conflicts, and I would like to add more input validation.
 
 ## 📐 Smarter Scheduling
 

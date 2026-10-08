@@ -135,3 +135,18 @@ inputs, the original version is easier to understand, maintain,
 and verify.
 
 I did not change the implementation after this review.
+
+## Phase 5: Testing and Verification
+
+I used AI to support testing and identify edge cases
+that were missing from the original test suite.
+
+I focused on empty schedules, identical start times
+across pets, adjacent tasks, future due dates,
+chronological sorting, and recurring task duplication.
+
+I used pytest to verify the actual behavior of the
+Python classes instead of relying only on the CLI demo.
+
+I also considered the limitation that conflict detection
+does not automatically resolve overlapping tasks.

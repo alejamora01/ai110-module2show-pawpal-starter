@@ -87,7 +87,17 @@ I tested task completion, task addition, multi-pet scheduling, priority sorting,
 
 **b. Confidence**
 
-All six tests passed, and my CLI demo successfully generated a schedule for two pets. I still want to improve recurring tasks and conflict handling in future phases.
+I would rate my current system 4 out of 5 stars.
+
+My automated tests cover basic operations, multiple pets,
+sorting, filtering, recurrence, and scheduling edge cases.
+
+I verified the implementation using pytest instead of
+assuming the generated code was correct.
+
+I still want to improve input validation and automatic
+conflict resolution. These are important limitations
+that I would address in another iteration.
 
 ---
 
