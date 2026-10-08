@@ -19,19 +19,22 @@ classDiagram
         +str name
         +int duration
         +int priority
+        +str category
+        +str start_time
+        +str recurrence
         +bool completed
-        +bool recurring
         +mark_complete()
     }
 
     class Scheduler {
         +sort_tasks(tasks)
         +detect_conflicts(tasks)
-        +generate_plan(owner, pet)
+        +generate_plan(owner)
         +generate_recurring_tasks(tasks)
     }
 
     Owner "1" --> "0..*" Pet : owns
     Pet "1" --> "0..*" Task : has
     Scheduler ..> Owner : reads constraints
+    Scheduler ..> Pet : plans tasks for
     Scheduler ..> Task : organizes

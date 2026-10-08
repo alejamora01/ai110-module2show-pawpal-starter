@@ -6,8 +6,10 @@ class Task:
     name: str
     duration: int
     priority: int
+    category: str = "general"
+    start_time: str | None = None
+    recurrence: str = "none"
     completed: bool = False
-    recurring: bool = False
 
     def mark_complete(self):
         pass
@@ -43,7 +45,7 @@ class Scheduler:
     def detect_conflicts(self, tasks: list[Task]):
         pass
 
-    def generate_plan(self, owner: Owner, pet: Pet):
+    def generate_plan(self, owner: Owner):
         pass
 
     def generate_recurring_tasks(self, tasks: list[Task]):

@@ -22,8 +22,15 @@ I separated these responsibilities to make the system easier to understand, test
 
 **b. Design changes**
 
-- Did your design change during implementation?
-- If yes, describe at least one change and why you made it.
+After reviewing my initial design with AI, I noticed a few things that could make my scheduler more reliable.
+
+First, I changed generate_plan to use the Owner instead of one Pet because the owner's available time should be shared across all pets.
+
+I also added start_time to Task so the scheduler can eventually detect overlapping activities. I replaced the recurring boolean with a recurrence field to support different repeating schedules, and added a category to help connect tasks with owner preferences.
+
+I decided to keep the original four classes because I wanted my design to stay simple and easy to maintain. I did not add a separate ScheduleEntry class yet because I want to implement and test the basic scheduling logic first.
+
+These changes are still part of the design. I will verify their behavior during implementation and testing.
 
 ---
 

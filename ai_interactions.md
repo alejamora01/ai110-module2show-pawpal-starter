@@ -60,3 +60,22 @@ Do not implement algorithms yet.
 ### Review outcome
 
 To be completed after reviewing the AI assistant's feedback.
+
+### Phase 1: AI Review Results
+
+The VS Code AI assistant reviewed my Python skeleton and UML.
+
+It identified several design risks:
+- Available time could be counted separately for multiple pets.
+- Task did not contain enough scheduling information.
+- A boolean recurring field was too limited.
+- Owner preferences were not connected to task categories.
+- The scheduler did not explain deferred tasks.
+
+I accepted the recommendations to schedule by owner, add start_time, use a recurrence field, and include task categories.
+
+I decided not to introduce an additional ScheduleEntry class yet because the initial design should stay manageable.
+
+Deferred tasks and scheduling explanations will be considered during implementation.
+
+I will verify these decisions with tests in later phases.
