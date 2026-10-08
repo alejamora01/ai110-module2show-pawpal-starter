@@ -165,3 +165,31 @@ the interface manually through Streamlit.
 
 I documented limitations, including the lack
 of automatic conflict resolution and persistent storage.
+
+## Optional Challenge 1: Agent Workflow
+
+### Objective
+Implement an advanced scheduling algorithm that finds
+the earliest available time slot across multiple pets.
+
+### AI Assistance
+I asked my VS Code AI assistant to review the existing
+Scheduler class and implement find_next_available_slot().
+
+The initial AI interaction did not modify my project files,
+so I added the implementation through the terminal.
+
+### Files Modified
+- pawpal_system.py: added find_next_available_slot().
+- tests/test_available_slot.py: added five tests.
+- README.md: documented the advanced algorithm.
+- ai_interactions.md: documented the workflow.
+
+### Verification
+I ran python -m pytest -v and all 22 tests passed.
+
+### Design Decision
+I kept the algorithm simple by sorting occupied intervals
+and finding the earliest gap that fits the new task.
+
+The method returns None when no available slot is found.

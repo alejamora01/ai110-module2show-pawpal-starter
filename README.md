@@ -102,23 +102,24 @@ Recurrence verified: True
 
 ## 🧪 Testing PawPal+
 
-Run the automated tests using `python -m pytest`.
+Run `python -m pytest`.
 
-Tests cover task creation, completion, multi-pet scheduling, sorting, filtering, recurrence, conflicts, time limits, and edge cases.
+The tests cover core scheduling, multiple pets, sorting, filtering, recurrence, conflicts, edge cases, and next available slot detection.
 
-**Confidence: 4/5 stars.** The tested backend is reliable for basic household scheduling, but conflicts are not automatically resolved.
+**Confidence: 4/5 stars.**
 
 ```text
 ============================= test session starts ==============================
 platform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0
 rootdir: /Users/alejamora/Desktop/ai110-module2show-pawpal-starter
-collected 17 items
+collected 22 items
 
-tests/test_edge_cases.py ......                                          [ 35%]
-tests/test_pawpal.py ......                                              [ 70%]
+tests/test_available_slot.py .....                                       [ 22%]
+tests/test_edge_cases.py ......                                          [ 50%]
+tests/test_pawpal.py ......                                              [ 77%]
 tests/test_scheduling.py .....                                           [100%]
 
-============================== 17 passed in 0.14s ==============================
+============================== 22 passed in 0.20s ==============================
 ```
 
 ## 📐 Smarter Scheduling
@@ -168,4 +169,24 @@ occurrence when completed.
 
 The verified CLI output is included in the Sample Output
 section above. The same backend powers Streamlit.
+
+## Advanced Algorithmic Capability
+
+### Next Available Slot
+
+PawPal+ includes `Scheduler.find_next_available_slot()`.
+
+This method finds the earliest available time for a new
+task within a specified daily time window.
+
+It considers scheduled tasks across multiple pets,
+their durations, and overlapping intervals.
+
+For example, if tasks occupy 08:00-08:30 and
+08:30-09:00, a new 20-minute task can start at 09:00.
+
+The method returns `None` when no suitable slot exists.
+
+The implementation uses sorted occupied intervals
+rather than checking every minute individually.
 

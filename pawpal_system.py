@@ -193,3 +193,59 @@ class Scheduler:
             "deferred": deferred,
             "remaining_minutes": remaining,
         }
+
+    def find_next_available_slot(
+        self, owner, duration,
+        window_start="08:00", window_end="18:00",
+        target_date=None
+    ):
+        """Find the earliest free slot across all pets."""
+        from datetime import date, datetime, timedelta
+
+        if target_date is None:
+            target_date = date.today()
+
+        if duration <= 0:
+            raise ValueError("Duration must be positive.")
+
+        def minutes(time_string):
+            parsed = datetime.strptime(time_string, "%H:%M")
+            return parsed.hour * 60 + parsed.minute
+
+        start = minutes(window_start)
+        end = minutes(window_end)
+
+        if start >= end:
+            raise ValueError("Invalid time window.")
+
+        occupied = []
+
+        for pet, task in owner.get_all_tasks():
+            if (
+                task.completed
+                or task.due_date != target_date
+                or not task.start_time
+            ):
+                continue
+
+            task_start = minutes(task.start_time)
+            task_end = task_start + task.duration
+            occupied.append((task_start, task_end))
+
+        occupied.sort()
+        candidate = start
+
+        for busy_start, busy_end in occupied:
+            if busy_end <= candidate:
+                continue
+
+            if candidate + duration <= busy_start:
+                break
+
+            candidate = max(candidate, busy_end)
+
+        if candidate + duration > end:
+            return None
+
+        return f"{candidate // 60:02d}:{candidate % 60:02d}"
+
