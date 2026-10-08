@@ -1,0 +1,11 @@
+
+PAWPAL+ | TODAY'S SCHEDULE
+---------------------------------------------
+09:00 | Luna: Breakfast (10 min) [priority: 3]
+08:30 | Milo: Medication (15 min) [priority: 3]
+08:00 | Luna: Morning walk (30 min) [priority: 3]
+10:00 | Milo: Playtime (20 min) [priority: 1]
+---------------------------------------------
+Remaining time: 25 minutes
+Deferred tasks: 0
+Time conflicts: 0

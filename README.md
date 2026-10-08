@@ -42,32 +42,53 @@ pip install -r requirements.txt
 6. Connect your logic to the Streamlit UI in `app.py`.
 7. Refine UML so it matches what you actually built.
 
+## Implementation Summary
+
+PawPal+ uses four Python classes:
+
+- Task: stores activities and completion status.
+- Pet: manages individual pet tasks.
+- Owner: combines tasks from multiple pets.
+- Scheduler: prioritizes tasks using available time.
+
+Scheduler retrieves tasks through Owner.get_all_tasks().
+
 ## 🖥️ Sample Output
 
-Paste a sample of your app's CLI or Streamlit output here so a reader can see what a generated plan looks like:
+Run: python main.py
 
-```
-# e.g.:
-# Daily plan for Biscuit (Golden Retriever):
-#   08:00 — Morning walk (30 min) [priority: high]
-#   09:00 — Feeding (10 min) [priority: high]
-#   ...
+```text
+PAWPAL+ | TODAY'S SCHEDULE
+---------------------------------------------
+09:00 | Luna: Breakfast (10 min) [priority: 3]
+08:30 | Milo: Medication (15 min) [priority: 3]
+08:00 | Luna: Morning walk (30 min) [priority: 3]
+10:00 | Milo: Playtime (20 min) [priority: 1]
+---------------------------------------------
+Remaining time: 25 minutes
+Deferred tasks: 0
+Time conflicts: 0
 ```
 
 ## 🧪 Testing PawPal+
 
-```bash
-# Run the full test suite:
-pytest
+Run: python -m pytest -v
 
-# Run with coverage:
-pytest --cov
-```
+```text
+============================= test session starts ==============================
+platform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Users/alejamora/Desktop/ai110-module2show-pawpal-starter/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/alejamora/Desktop/ai110-module2show-pawpal-starter
+collecting ... collected 6 items
 
-Sample test output:
+tests/test_pawpal.py::test_task_completion PASSED                        [ 16%]
+tests/test_pawpal.py::test_task_addition PASSED                          [ 33%]
+tests/test_pawpal.py::test_multi_pet_schedule PASSED                     [ 50%]
+tests/test_pawpal.py::test_priority_sorting PASSED                       [ 66%]
+tests/test_pawpal.py::test_time_constraint PASSED                        [ 83%]
+tests/test_pawpal.py::test_completed_tasks_excluded PASSED               [100%]
 
-```
-# Paste your pytest output here
+============================== 6 passed in 0.05s ===============================
 ```
 
 ## 📐 Smarter Scheduling

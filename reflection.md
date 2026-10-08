@@ -52,13 +52,13 @@ These changes are still part of the design. I will verify their behavior during 
 
 **a. How you used AI**
 
-- How did you use AI tools during this project (for example: design brainstorming, debugging, refactoring)?
-- What kinds of prompts or questions were most helpful?
+I used AI to help implement the four Python classes, understand multi-pet scheduling, and create automated tests. AI also helped me solve a Python 3.9 compatibility error.
 
 **b. Judgment and verification**
 
-- Describe one moment where you did not accept an AI suggestion as-is.
-- How did you evaluate or verify what the AI suggested?
+AI suggested adding a separate ScheduleEntry class, but I decided to keep the original four classes to avoid unnecessary complexity.
+
+I verified my implementation using a CLI demo and automated tests. I also corrected the unsupported type annotation using Optional[str].
 
 ---
 
@@ -66,13 +66,11 @@ These changes are still part of the design. I will verify their behavior during 
 
 **a. What you tested**
 
-- What behaviors did you test?
-- Why were these tests important?
+I tested task completion, task addition, multi-pet scheduling, priority sorting, time constraints, and completed task filtering.
 
 **b. Confidence**
 
-- How confident are you that your scheduler works correctly?
-- What edge cases would you test next if you had more time?
+All six tests passed, and my CLI demo successfully generated a schedule for two pets. I still want to improve recurring tasks and conflict handling in future phases.
 
 ---
 
