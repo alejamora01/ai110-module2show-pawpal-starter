@@ -79,3 +79,18 @@ I decided not to introduce an additional ScheduleEntry class yet because the ini
 Deferred tasks and scheduling explanations will be considered during implementation.
 
 I will verify these decisions with tests in later phases.
+
+## Phase 3: Streamlit Integration
+
+I used AI to connect the Streamlit interface to my
+Python object-oriented backend.
+
+I used st.session_state to keep the Owner object
+and its pets available across Streamlit reruns.
+
+The Add Pet button calls Owner.add_pet().
+The Add Task button calls Pet.add_task().
+The Generate Schedule button calls Scheduler.generate_plan().
+
+I verified the integration through browser interactions
+and checked that the existing backend tests still pass.
