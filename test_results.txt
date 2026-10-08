@@ -2,13 +2,18 @@
 platform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Users/alejamora/Desktop/ai110-module2show-pawpal-starter/.venv/bin/python
 cachedir: .pytest_cache
 rootdir: /Users/alejamora/Desktop/ai110-module2show-pawpal-starter
-collecting ... collected 6 items
+collecting ... collected 11 items
 
-tests/test_pawpal.py::test_task_completion PASSED                        [ 16%]
-tests/test_pawpal.py::test_task_addition PASSED                          [ 33%]
-tests/test_pawpal.py::test_multi_pet_schedule PASSED                     [ 50%]
-tests/test_pawpal.py::test_priority_sorting PASSED                       [ 66%]
-tests/test_pawpal.py::test_time_constraint PASSED                        [ 83%]
-tests/test_pawpal.py::test_completed_tasks_excluded PASSED               [100%]
+tests/test_pawpal.py::test_task_completion PASSED                        [  9%]
+tests/test_pawpal.py::test_task_addition PASSED                          [ 18%]
+tests/test_pawpal.py::test_multi_pet_schedule PASSED                     [ 27%]
+tests/test_pawpal.py::test_priority_sorting PASSED                       [ 36%]
+tests/test_pawpal.py::test_time_constraint PASSED                        [ 45%]
+tests/test_pawpal.py::test_completed_tasks_excluded PASSED               [ 54%]
+tests/test_scheduling.py::test_sort_by_time PASSED                       [ 63%]
+tests/test_scheduling.py::test_filter_by_pet_and_status PASSED           [ 72%]
+tests/test_scheduling.py::test_daily_recurrence PASSED                   [ 81%]
+tests/test_scheduling.py::test_weekly_recurrence PASSED                  [ 90%]
+tests/test_scheduling.py::test_overlapping_tasks PASSED                  [100%]
 
-============================== 6 passed in 0.05s ===============================
+============================== 11 passed in 0.75s ==============================

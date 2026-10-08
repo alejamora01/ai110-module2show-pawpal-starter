@@ -1,11 +1,22 @@
 
 PAWPAL+ | TODAY'S SCHEDULE
 ---------------------------------------------
-09:00 | Luna: Breakfast (10 min) [priority: 3]
-08:30 | Milo: Medication (15 min) [priority: 3]
-08:00 | Luna: Morning walk (30 min) [priority: 3]
-10:00 | Milo: Playtime (20 min) [priority: 1]
+08:00 | Milo: Breakfast (15 min)
+08:10 | Ares: Morning walk (30 min)
+12:00 | Milo: Playtime (20 min)
+16:00 | Ares: Afternoon walk (30 min)
 ---------------------------------------------
-Remaining time: 25 minutes
-Deferred tasks: 0
-Time conflicts: 0
+Remaining minutes: 25
+
+FILTER: ARES
+Ares - Afternoon walk
+Ares - Morning walk
+
+CONFLICT DETECTION
+WARNING: Breakfast overlaps with Morning walk
+
+RECURRING TASK TEST
+Completed: Breakfast
+Next occurrence: 2026-10-08
+Expected: 739897
+Recurrence verified: True

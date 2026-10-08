@@ -108,3 +108,30 @@ I tested the app in the browser by adding two pets, Ares and Milo, and assigning
 The Scheduler successfully generated a daily plan showing both pets, their tasks, and 80 remaining minutes.
 
 I verified that the interface uses my backend classes instead of placeholder data.
+
+## Phase 4: Algorithm Evaluation
+
+I asked my AI coding assistant to review Scheduler.detect_conflicts()
+and suggest a more efficient alternative.
+
+The AI compared my nested-loop algorithm with an event-sweep
+algorithm.
+
+My implementation:
+- Time complexity: O(n^2)
+- Space complexity: O(n + k)
+- Easy to read and debug
+
+AI alternative:
+- Time complexity: O(n log n + k)
+- Space complexity: O(n + k)
+- Better for larger schedules
+
+I decided to keep the nested-loop implementation because PawPal+
+is designed for a small number of household pet tasks.
+
+Although the event-sweep algorithm is more efficient for large
+inputs, the original version is easier to understand, maintain,
+and verify.
+
+I did not change the implementation after this review.

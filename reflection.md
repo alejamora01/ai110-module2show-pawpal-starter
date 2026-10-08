@@ -38,13 +38,30 @@ These changes are still part of the design. I will verify their behavior during 
 
 **a. Constraints and priorities**
 
-- What constraints does your scheduler consider (for example: time, priority, preferences)?
-- How did you decide which constraints mattered most?
+My scheduler considers task priority, duration, completion status, due dates, and the owner's available time.
+
+I chose to prioritize higher-priority tasks first because activities like medication and feeding can be more important than optional activities.
+
+I also implemented sorting by time, filtering by pet or status, recurring tasks, and conflict detection.
 
 **b. Tradeoffs**
 
-- Describe one tradeoff your scheduler makes.
-- Why is that tradeoff reasonable for this scenario?
+One tradeoff I made was choosing readability over performance
+for conflict detection.
+
+My current algorithm uses nested loops to compare task intervals.
+It has O(n^2) time complexity.
+
+AI suggested an event-sweep alternative with
+O(n log n + k) complexity, where k is the number of conflicts.
+
+I decided to keep my original algorithm because PawPal+
+handles a relatively small number of tasks.
+
+I also chose to detect scheduling conflicts without
+automatically rescheduling activities. This keeps the
+implementation simple while still warning pet owners
+about overlapping tasks.
 
 ---
 
