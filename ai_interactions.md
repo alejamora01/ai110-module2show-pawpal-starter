@@ -150,3 +150,18 @@ Python classes instead of relying only on the CLI demo.
 
 I also considered the limitation that conflict detection
 does not automatically resolve overlapping tasks.
+
+## Phase 6: Final Architecture and UI
+
+I used AI to review my final UML structure and
+to help connect the scheduling algorithms to the UI.
+
+I updated the UI to show sorted schedules,
+task filters, recurrence options, and conflict warnings.
+
+I kept the original four-class architecture.
+I verified the backend using pytest and reviewed
+the interface manually through Streamlit.
+
+I documented limitations, including the lack
+of automatic conflict resolution and persistent storage.

@@ -69,13 +69,33 @@ about overlapping tasks.
 
 **a. How you used AI**
 
-I used AI to help implement the four Python classes, understand multi-pet scheduling, and create automated tests. AI also helped me solve a Python 3.9 compatibility error.
+I used AI throughout the project to brainstorm my UML
+design, implement Python classes, plan algorithms, and
+create automated tests. VS Code AI was especially useful
+for reviewing my class relationships and comparing
+different approaches to conflict detection.
+
+I worked with separate AI discussions for design,
+implementation, algorithms, and testing. This helped
+me keep each phase focused.
 
 **b. Judgment and verification**
 
-AI suggested adding a separate ScheduleEntry class, but I decided to keep the original four classes to avoid unnecessary complexity.
+One suggestion I decided not to implement was adding
+a separate ScheduleEntry class. I wanted to keep
+my initial architecture simple with four main classes.
 
-I verified my implementation using a CLI demo and automated tests. I also corrected the unsupported type annotation using Optional[str].
+AI also compared my nested-loop conflict detection
+with an event-sweep algorithm. I kept the simpler
+version because readability was more important
+for a small household scheduling application.
+
+I also had to correct a Python 3.9 compatibility
+problem involving type annotations.
+
+Instead of assuming AI-generated code worked,
+I ran the CLI demo and verified the behavior
+through automated tests.
 
 ---
 
@@ -105,12 +125,29 @@ that I would address in another iteration.
 
 **a. What went well**
 
-- What part of this project are you most satisfied with?
+I am most satisfied with connecting my object-oriented
+Python backend to the Streamlit interface. I was able
+to create a system where multiple pets share one
+owner's available time.
+
+I also improved my testing process by adding
+edge cases instead of checking only basic behavior.
 
 **b. What you would improve**
 
-- If you had another iteration, what would you improve or redesign?
+If I had another iteration, I would implement
+automatic conflict resolution and stronger input
+validation. I would also consider permanent data
+storage so information remains available after
+the Streamlit session ends.
 
 **c. Key takeaway**
 
-- What is one important thing you learned about designing systems or working with AI on this project?
+My biggest takeaway is that AI is helpful for
+brainstorming, coding, and debugging, but I still
+need to make the final engineering decisions.
+
+Being the lead architect means understanding
+the design, evaluating tradeoffs, running tests,
+and verifying that the implementation meets
+the actual project requirements.

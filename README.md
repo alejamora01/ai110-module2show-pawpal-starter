@@ -53,9 +53,28 @@ PawPal+ uses four Python classes:
 
 Scheduler retrieves tasks through Owner.get_all_tasks().
 
+## Features
+
+- Manage multiple pets through a single owner profile.
+- Create care tasks with duration, priority, date, and time.
+- Sort tasks chronologically.
+- Filter tasks by pet and completion status.
+- Generate daily schedules based on available minutes.
+- Create the next daily or weekly occurrence after completion.
+- Detect overlapping timed tasks and display warnings.
+- Keep owner and pet objects in Streamlit session state.
+
+## System Architecture
+
+The app separates the Streamlit interface (`app.py`)
+from the OOP backend (`pawpal_system.py`).
+
+The final Mermaid class diagram is available at
+`diagrams/uml_final.mmd`.
+
 ## 🖥️ Sample Output
 
-Generated with `python main.py`:
+Output from `python main.py`:
 
 ```text
 PAWPAL+ | TODAY'S SCHEDULE
@@ -83,24 +102,11 @@ Recurrence verified: True
 
 ## 🧪 Testing PawPal+
 
-Run the automated tests with:
+Run the automated tests using `python -m pytest`.
 
-```bash
-python -m pytest
-```
+Tests cover task creation, completion, multi-pet scheduling, sorting, filtering, recurrence, conflicts, time limits, and edge cases.
 
-### What I Tested
-
-- Task completion and task addition
-- Scheduling tasks from multiple pets
-- Priority and chronological sorting
-- Filtering by pet and completion status
-- Daily and weekly recurring tasks
-- Overlapping and adjacent time slots
-- Empty task lists and future tasks
-- Time constraints and duplicate prevention
-
-### Actual Test Results
+**Confidence: 4/5 stars.** The tested backend is reliable for basic household scheduling, but conflicts are not automatically resolved.
 
 ```text
 ============================= test session starts ==============================
@@ -112,14 +118,8 @@ tests/test_edge_cases.py ......                                          [ 35%]
 tests/test_pawpal.py ......                                              [ 70%]
 tests/test_scheduling.py .....                                           [100%]
 
-============================== 17 passed in 0.10s ==============================
+============================== 17 passed in 0.14s ==============================
 ```
-
-### Confidence Level
-
-**4/5 stars**
-
-I feel confident about the core scheduling behavior because the automated tests cover normal scenarios and important edge cases. However, the scheduler does not automatically resolve time conflicts, and I would like to add more input validation.
 
 ## 📐 Smarter Scheduling
 
@@ -144,12 +144,28 @@ when the current task is completed.
 
 ## 📸 Demo Walkthrough
 
-Describe your app in numbered steps so a reader can follow along without watching a video:
+1. Start the app using `python -m streamlit run app.py`.
+2. Enter an owner name and available minutes.
+3. Add two pets, such as Ares and Milo.
+4. Add care tasks with durations, priorities, dates, and times.
+5. Use the Task Manager to filter by pet or completion status.
+6. Select Generate Schedule to display today's tasks.
+7. Review remaining time, deferred tasks, and conflict warnings.
+8. Mark a recurring task complete and check its next due date.
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+### Scheduling behavior
 
-**Screenshot or video** *(optional)*: <!-- Insert a screenshot or link to a demo video here -->
+Tasks are selected by priority and available minutes, and
+displayed in chronological order where times are provided.
+
+Tasks with overlapping time intervals generate warnings.
+The app does not automatically move overlapping tasks.
+
+Daily and weekly recurring tasks create their next
+occurrence when completed.
+
+### CLI Demonstration
+
+The verified CLI output is included in the Sample Output
+section above. The same backend powers Streamlit.
+
