@@ -4,8 +4,21 @@
 
 **a. Initial design**
 
-- Briefly describe your initial UML design.
-- What classes did you include, and what responsibilities did you assign to each?
+For my initial design, I wanted PawPal+ to be simple and organized so pet owners can manage their pets' routines.
+
+The three main actions are:
+1. Add a pet and save its basic information.
+2. Create and manage care tasks like feeding, walking, and medication.
+3. Generate a daily plan based on available time and task priorities.
+
+I chose four main classes:
+
+- **Owner:** Stores the owner's name, available time, preferences, and pets.
+- **Pet:** Stores each pet's basic information and care tasks.
+- **Task:** Represents a care activity with a duration, priority, and completion status.
+- **Scheduler:** Organizes tasks based on priorities, available time, and scheduling constraints.
+
+I separated these responsibilities to make the system easier to understand, test, and improve.
 
 **b. Design changes**
 

@@ -38,3 +38,25 @@
 **Which approach did you use in your final implementation and why?**
 
 <!-- Your conclusion -->
+
+## Phase 1: System Design
+
+### AI design assistance
+
+I used ChatGPT to brainstorm the initial class responsibilities,
+create a Mermaid UML draft, and scaffold Python class stubs.
+
+I chose to keep four classes: Owner, Pet, Task, and Scheduler.
+
+The design separates pet information from scheduling logic.
+
+### VS Code AI review prompt
+
+Review my PawPal+ system design in pawpal_system.py and
+diagrams/uml_draft.mmd. Check class responsibilities,
+relationships, and potential scheduling bottlenecks.
+Do not implement algorithms yet.
+
+### Review outcome
+
+To be completed after reviewing the AI assistant's feedback.

@@ -1,0 +1,37 @@
+classDiagram
+    class Owner {
+        +str name
+        +int available_minutes
+        +list preferences
+        +list pets
+        +add_pet(pet)
+    }
+
+    class Pet {
+        +str name
+        +str species
+        +int age
+        +list tasks
+        +add_task(task)
+    }
+
+    class Task {
+        +str name
+        +int duration
+        +int priority
+        +bool completed
+        +bool recurring
+        +mark_complete()
+    }
+
+    class Scheduler {
+        +sort_tasks(tasks)
+        +detect_conflicts(tasks)
+        +generate_plan(owner, pet)
+        +generate_recurring_tasks(tasks)
+    }
+
+    Owner "1" --> "0..*" Pet : owns
+    Pet "1" --> "0..*" Task : has
+    Scheduler ..> Owner : reads constraints
+    Scheduler ..> Task : organizes
